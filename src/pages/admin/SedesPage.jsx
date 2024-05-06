@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react'
 import { useViajes } from '../../context/ViajesContext'
-import { Link} from 'react-router-dom'
+import { Link , useNavigate} from 'react-router-dom'
 import RegisterSede from './RegisterSede'
 
 
 function SedesPage() {
 
  
-
+  const navigate = useNavigate()
   
 
 
@@ -32,7 +32,7 @@ function SedesPage() {
 
         <li>
 
-          <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Agregar Sede</button>
+          <button type="button" className="btn btn-primary" onClick={()=> navigate('/viajes/sedes/add')}>Agregar Sede</button>
         </li>
 
         <li>
@@ -46,18 +46,7 @@ function SedesPage() {
 
       </ul>
 
-      <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div className="modal-dialog">
-          <div className="modal-content">
-
-            <RegisterSede></RegisterSede>
-            <div className="modal-footer bg-zinc-700 ">
-              <button type="button" className="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-
-            </div>
-          </div>
-        </div>
-      </div>
+      
 
       <div className="table-responsive ">
         <table className="table" style={{ width: "40%", margin: "5%" }}>

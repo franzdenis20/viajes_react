@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import { useViajes } from '../../context/ViajesContext'
 
-import RegisterAdmin from './RegisterAdmin'
 import { useAuth } from '../../context/AuthContext'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate} from 'react-router-dom'
 
 
 function AdminPage() {
 
- 
+  const navigate =  useNavigate();
 
   
   const { admins, deleteAdmin ,getAdmins} = useAuth()
@@ -34,7 +32,7 @@ function AdminPage() {
 
         <li>
 
-          <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Agregar Empleado</button>
+          <button type="button" className="btn btn-primary" onClick={()=> navigate('/viajes/admin/add')} >Agregar Administrador</button>
         </li>
 
         <li>
@@ -48,18 +46,7 @@ function AdminPage() {
 
       </ul>
 
-      <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div className="modal-dialog">
-          <div className="modal-content">
-
-            <RegisterAdmin></RegisterAdmin>
-            <div className="modal-footer bg-zinc-700 ">
-              <button type="button" className="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-
-            </div>
-          </div>
-        </div>
-      </div>
+      
 
       <div className="table-responsive ">
         <table className="table" style={{ width: "60%", margin: "5%" }}>

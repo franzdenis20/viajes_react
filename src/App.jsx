@@ -20,6 +20,9 @@ import ViajesPage from './pages/admin/ViajesPage';
 import EmpleadosPage from './pages/admin/EmpleadosPage';
 import AdminPage from './pages/admin/AdminPage';
 import SedesPage from './pages/admin/SedesPage';
+import RegisterSede from './pages/admin/RegisterSede';
+import RegisterAdmin from './pages/admin/RegisterAdmin';
+
 
 
 function App() {
@@ -44,6 +47,13 @@ function App() {
                   <Route path='/viajes/administradores' element={<AdminPage></AdminPage>}></Route>
                   <Route path='/viajes/empleados/:id' element={<EmpleadosPage></EmpleadosPage>}></Route>
                   
+                  <Route path='/viajes/sedes/add' element={<RegisterSede></RegisterSede>}></Route>
+                  <Route path='/viajes/admin/add' element={<RegisterAdmin></RegisterAdmin>}></Route>
+                  <Route path='/viajes/empleados/add' element={<RegisterEmpleado></RegisterEmpleado>}></Route>
+
+
+
+
                   <Route path='/viajes/:id' element={<ViajesUsers></ViajesUsers>}></Route>
                   <Route path='/viajes/edit/:id' element={<ViajeFormPage />}></Route>
                   <Route path='/viajes/new/:id' element={<ViajeFormPage />}></Route>

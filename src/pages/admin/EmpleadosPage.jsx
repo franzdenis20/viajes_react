@@ -46,7 +46,7 @@ function EmpleadosPage() {
 
         <li>
 
-          <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Agregar Empleado</button>
+          <button type="button" className="btn btn-primary" onClick={()=> navigate('/viajes/empleados/add')}>Agregar Empleado</button>
         </li>
 
         <li>
